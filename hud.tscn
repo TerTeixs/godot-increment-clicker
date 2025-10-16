@@ -1,0 +1,106 @@
+[gd_scene load_steps=7 format=3 uid="uid://clgle5rw7uaub"]
+
+[ext_resource type="Script" uid="uid://ddao31w5iipoq" path="res://scripts/Hud.cs" id="1_37p78"]
+[ext_resource type="Script" uid="uid://bu75fgmegllfp" path="res://scripts/Toast.cs" id="2_8sq4i"]
+[ext_resource type="Texture2D" uid="uid://cqlkbl3q57tyo" path="res://arts/cursor-pointer.png" id="2_64ctp"]
+[ext_resource type="AudioStream" uid="uid://ctihfms5rr1c" path="res://sounds/click.mp3" id="4_640wx"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_64ctp"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_a2258"]
+
+[node name="HUD" type="CanvasLayer"]
+layer = 0
+script = ExtResource("1_37p78")
+
+[node name="Toast" type="RichTextLabel" parent="."]
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -130.0
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/underline_alpha = 50
+theme_override_constants/strikethrough_alpha = 50
+theme_override_font_sizes/normal_font_size = 32
+text = "Toast Here"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("2_8sq4i")
+
+[node name="TotalSteak" type="Label" parent="."]
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 50.0
+offset_right = -343.0
+offset_bottom = 73.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 32
+text = "Steaks : 0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SteakPerSec" type="Label" parent="."]
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 90.0
+offset_right = -343.0
+offset_bottom = 135.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 16
+text = "Steak Per Second : 0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Store" type="Label" parent="."]
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 360.0
+offset_top = 50.0
+offset_bottom = 95.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 32
+text = "Store"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CursorButton" type="Button" parent="."]
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 372.0
+offset_top = -332.0
+offset_bottom = -256.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxTexture_64ctp")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_a2258")
+text = "Cursor
+10"
+alignment = 2
+
+[node name="CursorImg" type="TextureRect" parent="CursorButton"]
+z_index = -1
+layout_mode = 0
+offset_left = 20.0
+offset_top = 2.0
+offset_right = 103.0
+offset_bottom = 77.0
+texture = ExtResource("2_64ctp")
+expand_mode = 2
+
+[node name="StoreSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_640wx")
+volume_db = -12.5
+pitch_scale = 1.25
+mix_target = 1
+max_polyphony = 25
+
+[connection signal="pressed" from="CursorButton" to="." method="OnCursorButtonPressed"]

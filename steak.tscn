@@ -1,0 +1,60 @@
+[gd_scene load_steps=7 format=3 uid="uid://chhsmp48yl3ww"]
+
+[ext_resource type="Script" uid="uid://bryppchgwobob" path="res://scripts/Steak.cs" id="1_l30vh"]
+[ext_resource type="Texture2D" uid="uid://bdl0w1xlsd6fg" path="res://arts/steak.webp" id="1_x8ptn"]
+[ext_resource type="AudioStream" uid="uid://dt3fli2mclnu4" path="res://sounds/fizzing-sound.mp3" id="3_0rplr"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_l30vh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_x8ptn")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_l30vh"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0rplr"]
+radius = 58.329426
+height = 150.13663
+
+[node name="Steak" type="Area2D"]
+script = ExtResource("1_l30vh")
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(1.5, 1.5)
+sprite_frames = SubResource("SpriteFrames_l30vh")
+
+[node name="SteakButton" type="Button" parent="AnimatedSprite2D"]
+visibility_layer = 0
+anchors_preset = -1
+anchor_left = 0.13750002
+anchor_top = 0.2041667
+anchor_right = 0.748
+anchor_bottom = 0.80166674
+offset_left = -84.66667
+offset_top = -82.66667
+offset_right = -49.013336
+offset_bottom = -58.266678
+grow_horizontal = 2
+grow_vertical = 2
+icon = SubResource("CanvasTexture_l30vh")
+metadata/_edit_use_anchors_ = true
+
+[node name="ClickSound" type="AudioStreamPlayer" parent="AnimatedSprite2D/SteakButton"]
+stream = ExtResource("3_0rplr")
+volume_db = -12.5
+pitch_scale = 1.25
+mix_target = 1
+max_polyphony = 25
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 0.85346603
+scale = Vector2(1.5, 1.5)
+shape = SubResource("CapsuleShape2D_0rplr")
+
+[connection signal="pressed" from="AnimatedSprite2D/SteakButton" to="." method="OnPressedSteakButton"]

@@ -1,0 +1,41 @@
+[gd_scene load_steps=5 format=3 uid="uid://b4s30vcs4w3mj"]
+
+[ext_resource type="Script" uid="uid://buifor1o71ovc" path="res://scripts/Main.cs" id="1_1bvp3"]
+[ext_resource type="PackedScene" uid="uid://clgle5rw7uaub" path="res://hud.tscn" id="1_h2yge"]
+[ext_resource type="Texture2D" uid="uid://badwuxgtia6q5" path="res://arts/grass-bg-darker.png" id="2_1bvp3"]
+[ext_resource type="PackedScene" uid="uid://chhsmp48yl3ww" path="res://steak.tscn" id="3_lquwl"]
+
+[node name="Main" type="Node"]
+script = ExtResource("1_1bvp3")
+
+[node name="BackgroundImg" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_1bvp3")
+stretch_mode = 1
+metadata/_edit_group_ = true
+
+[node name="MiddleSplit" type="ColorRect" parent="BackgroundImg"]
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_right = 10.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1.1551381e-06, 0.71964246, 0.081514694, 1)
+
+[node name="HUD" parent="." instance=ExtResource("1_h2yge")]
+
+[node name="Steak" parent="." instance=ExtResource("3_lquwl")]
+z_index = 1
+position = Vector2(185, 307)
+
+[node name="ProduceTimer" type="Timer" parent="."]
+wait_time = 0.05
+
+[connection signal="timeout" from="ProduceTimer" to="." method="OnProduceTimerTimeout"]
