@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://b4s30vcs4w3mj"]
+[gd_scene load_steps=7 format=3 uid="uid://b4s30vcs4w3mj"]
 
 [ext_resource type="Script" uid="uid://buifor1o71ovc" path="res://scripts/Main.cs" id="1_1bvp3"]
 [ext_resource type="PackedScene" uid="uid://clgle5rw7uaub" path="res://hud.tscn" id="1_h2yge"]
 [ext_resource type="Texture2D" uid="uid://badwuxgtia6q5" path="res://arts/grass-bg-darker.png" id="2_1bvp3"]
+[ext_resource type="Texture2D" uid="uid://dv3w63im7hdg7" path="res://arts/wooden-plank-bg-72-darker.png" id="3_7mycd"]
 [ext_resource type="PackedScene" uid="uid://chhsmp48yl3ww" path="res://steak.tscn" id="3_lquwl"]
+[ext_resource type="Texture2D" uid="uid://bgpieuw0ovqwk" path="res://arts/cobble-stone-64.png" id="4_7mycd"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_1bvp3")
@@ -18,13 +20,44 @@ texture = ExtResource("2_1bvp3")
 stretch_mode = 1
 metadata/_edit_group_ = true
 
-[node name="MiddleSplit" type="ColorRect" parent="BackgroundImg"]
-layout_mode = 1
+[node name="BackgroundImg2" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 360.0
+offset_top = -16.0
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_7mycd")
+expand_mode = 1
+stretch_mode = 1
+metadata/_edit_group_ = true
+
+[node name="BackgroundImg3" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 360.0
+offset_top = -16.0
+offset_right = -350.0
+offset_bottom = 104.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_7mycd")
+expand_mode = 1
+stretch_mode = 1
+metadata/_edit_group_ = true
+
+[node name="MiddleSplit" type="ColorRect" parent="."]
+visible = false
 anchors_preset = 13
 anchor_left = 0.5
 anchor_right = 0.5
 anchor_bottom = 1.0
+offset_top = -16.0
 offset_right = 10.0
+offset_bottom = 104.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(1.1551381e-06, 0.71964246, 0.081514694, 1)
@@ -33,7 +66,7 @@ color = Color(1.1551381e-06, 0.71964246, 0.081514694, 1)
 
 [node name="Steak" parent="." instance=ExtResource("3_lquwl")]
 z_index = 1
-position = Vector2(185, 307)
+position = Vector2(178, 271)
 
 [node name="ProduceTimer" type="Timer" parent="."]
 wait_time = 0.05

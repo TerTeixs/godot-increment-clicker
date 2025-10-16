@@ -1,11 +1,18 @@
-[gd_scene load_steps=7 format=3 uid="uid://clgle5rw7uaub"]
+[gd_scene load_steps=11 format=3 uid="uid://clgle5rw7uaub"]
 
 [ext_resource type="Script" uid="uid://ddao31w5iipoq" path="res://scripts/Hud.cs" id="1_37p78"]
 [ext_resource type="Script" uid="uid://bu75fgmegllfp" path="res://scripts/Toast.cs" id="2_8sq4i"]
 [ext_resource type="Texture2D" uid="uid://cqlkbl3q57tyo" path="res://arts/cursor-pointer.png" id="2_64ctp"]
 [ext_resource type="AudioStream" uid="uid://ctihfms5rr1c" path="res://sounds/click.mp3" id="4_640wx"]
+[ext_resource type="Texture2D" uid="uid://bo5qui1hyu4b8" path="res://arts/chef-hat-filled.png" id="4_a2258"]
+[ext_resource type="Texture2D" uid="uid://dwua2m5b8sjvf" path="res://arts/farm-filled.png" id="5_1xsix"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_64ctp"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_640wx"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_640wx"]
+bg_color = Color(0.99215686, 0.99215686, 0.99215686, 0.31764707)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rftc2"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_a2258"]
 
@@ -18,8 +25,8 @@ anchors_preset = 14
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_top = -130.0
-offset_bottom = 30.0
+offset_top = 120.0
+offset_bottom = 240.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/underline_alpha = 50
@@ -59,8 +66,8 @@ vertical_alignment = 1
 anchors_preset = 10
 anchor_right = 1.0
 offset_left = 360.0
-offset_top = 50.0
-offset_bottom = 95.0
+offset_top = 57.0
+offset_bottom = 102.0
 grow_horizontal = 2
 theme_override_font_sizes/font_size = 32
 text = "Store"
@@ -73,27 +80,91 @@ anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
 offset_left = 372.0
-offset_top = -332.0
-offset_bottom = -256.0
+offset_top = -95.0
+offset_bottom = -19.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_font_sizes/font_size = 24
-theme_override_styles/normal = SubResource("StyleBoxTexture_64ctp")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_640wx")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_640wx")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_rftc2")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_a2258")
 text = "Cursor
 10"
 alignment = 2
+metadata/_edit_group_ = true
 
 [node name="CursorImg" type="TextureRect" parent="CursorButton"]
-z_index = -1
 layout_mode = 0
 offset_left = 20.0
 offset_top = 2.0
 offset_right = 103.0
 offset_bottom = 77.0
 texture = ExtResource("2_64ctp")
+expand_mode = 2
+
+[node name="ChefButton" type="Button" parent="."]
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 372.0
+offset_top = -21.0
+offset_bottom = 55.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxEmpty_640wx")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_640wx")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_rftc2")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_a2258")
+text = "Chef
+200"
+alignment = 2
+metadata/_edit_group_ = true
+
+[node name="ChefImg" type="TextureRect" parent="ChefButton"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 2.0
+offset_right = 103.0
+offset_bottom = 77.0
+texture = ExtResource("4_a2258")
+expand_mode = 2
+
+[node name="FarmButton" type="Button" parent="."]
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 372.0
+offset_top = 53.0
+offset_bottom = 129.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxEmpty_640wx")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_640wx")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_rftc2")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_a2258")
+text = "Farm
+4000"
+alignment = 2
+metadata/_edit_group_ = true
+
+[node name="FarmImg" type="TextureRect" parent="FarmButton"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 2.0
+offset_right = 103.0
+offset_bottom = 77.0
+texture = ExtResource("5_1xsix")
 expand_mode = 2
 
 [node name="StoreSound" type="AudioStreamPlayer" parent="."]
@@ -104,3 +175,5 @@ mix_target = 1
 max_polyphony = 25
 
 [connection signal="pressed" from="CursorButton" to="." method="OnCursorButtonPressed"]
+[connection signal="pressed" from="ChefButton" to="." method="OnChefButtonPressed"]
+[connection signal="pressed" from="FarmButton" to="." method="OnFarmButtonPressed"]

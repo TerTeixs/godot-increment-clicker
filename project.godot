@@ -22,11 +22,15 @@ PlayerStats="*res://scripts/PlayerStats.cs"
 [display]
 
 window/size/viewport_width=720
-window/size/viewport_height=900
+window/size/viewport_height=480
 
 [dotnet]
 
 project/assembly_name="Increment Clicker"
+
+[gui]
+
+theme/custom_font="uid://c25e6bedp0vhe"
 
 [rendering]
 

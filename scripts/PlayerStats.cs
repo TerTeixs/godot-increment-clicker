@@ -38,7 +38,7 @@ public partial class PlayerStats : Node
     [Export]
     public float ChefBaseMutiplier { get; set; } = 1;
     [Export]
-    public float ChefWorkerCost { get; set; } = 2000;
+    public float ChefWorkerCost { get; set; } = 200;
     // Farm
     [Export]
     public int FarmBaseWorker { get; set; } = 0;
@@ -68,6 +68,9 @@ public partial class PlayerStats : Node
     }
     public void UpdateProducePerSec()
     {
-        ProducePerSec = 0 + (CursorBaseWorker * CursorBaseRate * CursorBaseMutiplier);
+        ProducePerSec = 0 +
+        (CursorBaseWorker * CursorBaseRate * CursorBaseMutiplier) +
+        (ChefBaseWorker * ChefBaseRate * ChefBaseMutiplier) +
+        (FarmBaseWorker * FarmBaseRate * FarmBaseMutiplier);
     }
 }
