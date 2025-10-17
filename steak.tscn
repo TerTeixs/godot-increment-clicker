@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://chhsmp48yl3ww"]
 
 [ext_resource type="Script" uid="uid://bryppchgwobob" path="res://scripts/Steak.cs" id="1_l30vh"]
-[ext_resource type="Texture2D" uid="uid://bdl0w1xlsd6fg" path="res://arts/steak.webp" id="1_x8ptn"]
+[ext_resource type="Texture2D" uid="uid://cki0a32gx6ae3" path="res://arts/steak.webp" id="1_x8ptn"]
 [ext_resource type="AudioStream" uid="uid://dt3fli2mclnu4" path="res://sounds/fizzing-sound.mp3" id="3_0rplr"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_l30vh"]
