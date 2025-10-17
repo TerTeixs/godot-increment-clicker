@@ -1,6 +1,6 @@
 ﻿Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Increment Clicker", "Increment Clicker.csproj", "{9CAE12D7-5F2A-441D-BAA9-3D0A1AA1D704}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Increment Clicker", "Increment Clicker.csproj", "{DB56ED73-FEEA-4E40-800B-E1F69FC6D232}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -9,11 +9,11 @@ Global
 	ExportRelease|Any CPU = ExportRelease|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{9CAE12D7-5F2A-441D-BAA9-3D0A1AA1D704}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9CAE12D7-5F2A-441D-BAA9-3D0A1AA1D704}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9CAE12D7-5F2A-441D-BAA9-3D0A1AA1D704}.ExportDebug|Any CPU.ActiveCfg = ExportDebug|Any CPU
-		{9CAE12D7-5F2A-441D-BAA9-3D0A1AA1D704}.ExportDebug|Any CPU.Build.0 = ExportDebug|Any CPU
-		{9CAE12D7-5F2A-441D-BAA9-3D0A1AA1D704}.ExportRelease|Any CPU.ActiveCfg = ExportRelease|Any CPU
-		{9CAE12D7-5F2A-441D-BAA9-3D0A1AA1D704}.ExportRelease|Any CPU.Build.0 = ExportRelease|Any CPU
+		{DB56ED73-FEEA-4E40-800B-E1F69FC6D232}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DB56ED73-FEEA-4E40-800B-E1F69FC6D232}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DB56ED73-FEEA-4E40-800B-E1F69FC6D232}.ExportDebug|Any CPU.ActiveCfg = ExportDebug|Any CPU
+		{DB56ED73-FEEA-4E40-800B-E1F69FC6D232}.ExportDebug|Any CPU.Build.0 = ExportDebug|Any CPU
+		{DB56ED73-FEEA-4E40-800B-E1F69FC6D232}.ExportRelease|Any CPU.ActiveCfg = ExportRelease|Any CPU
+		{DB56ED73-FEEA-4E40-800B-E1F69FC6D232}.ExportRelease|Any CPU.Build.0 = ExportRelease|Any CPU
 	EndGlobalSection
 EndGlobal

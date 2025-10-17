@@ -10,7 +10,7 @@
 [node name="Main" type="Node"]
 script = ExtResource("1_1bvp3")
 
-[node name="BackgroundImg" type="TextureRect" parent="."]
+[node name="BackgroundImgLeft" type="TextureRect" parent="."]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -20,7 +20,7 @@ texture = ExtResource("2_1bvp3")
 stretch_mode = 1
 metadata/_edit_group_ = true
 
-[node name="BackgroundImg2" type="TextureRect" parent="."]
+[node name="BackgroundImgRight" type="TextureRect" parent="."]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -34,7 +34,7 @@ expand_mode = 1
 stretch_mode = 1
 metadata/_edit_group_ = true
 
-[node name="BackgroundImg3" type="TextureRect" parent="."]
+[node name="MiddleImg" type="TextureRect" parent="."]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -48,19 +48,6 @@ texture = ExtResource("4_7mycd")
 expand_mode = 1
 stretch_mode = 1
 metadata/_edit_group_ = true
-
-[node name="MiddleSplit" type="ColorRect" parent="."]
-visible = false
-anchors_preset = 13
-anchor_left = 0.5
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_top = -16.0
-offset_right = 10.0
-offset_bottom = 104.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(1.1551381e-06, 0.71964246, 0.081514694, 1)
 
 [node name="HUD" parent="." instance=ExtResource("1_h2yge")]
 
